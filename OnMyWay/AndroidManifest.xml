@@ -17,6 +17,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.onmyway.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,7 @@
         <activity
             android:name="com.example.onmyway.DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
-            android:parentActivityName="com.example.onmyway.MainActivity" >
+            android:parentActivityName="com.example.onmyway.LoggedIn" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.onmyway.MainActivity" />

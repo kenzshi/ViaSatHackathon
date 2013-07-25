@@ -8,6 +8,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".DisplayMessageActivity" >
 
+        <Button
+        android:id="@+id/button1"
+        style="@style/btn"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:onClick="sendMessage"
+        android:text="@string/button_send" />
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

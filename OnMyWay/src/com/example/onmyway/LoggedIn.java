@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class LoggedIn extends Activity {
 
+	public final static String EXTRA_MESSAGE = "com.example.onmyway.MESSAGE";
+	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,7 @@ public class LoggedIn extends Activity {
 	    textView.setText(message);
 
 	    // Set the text view as the activity layout
-	    setContentView(textView);
+	    setContentView(R.layout.activity_logged_in);
 	}
 
 	/**
@@ -49,6 +52,21 @@ public class LoggedIn extends Activity {
 		getMenuInflater().inflate(R.menu.logged_in, menu);
 		return true;
 	}
+	
+	public void sendMessage(View view) {
+    	Intent intent = new Intent(this, DisplayMessageActivity.class);
+    	//EditText editText = (EditText) findViewById(R.id.edit_message);
+    	//String message = editText.getText().toString();
+    	
+    	GPSTracker tracker = new GPSTracker(LoggedIn.this);
+    	double longitude = tracker.getLongitude();
+    	double latitude = tracker.getLatitude();
+    	
+    	String message = String.format("%.3f", longitude) + "," + String.format("%.3f", latitude);
+    	
+    	intent.putExtra(EXTRA_MESSAGE, message);
+    	startActivity(intent);
+    }
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
