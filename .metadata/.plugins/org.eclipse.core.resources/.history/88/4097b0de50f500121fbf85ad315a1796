@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         android:ems="10"
-        android:hint="Name" />
+        android:hint="@string/username_here" />
             <requestFocus />
 
     <Button

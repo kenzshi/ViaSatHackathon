@@ -29,7 +29,7 @@
         android:layout_above="@+id/btnSendSMS"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-		android:visibility="gone"
+
         android:text="Message Sent" />
     
 </RelativeLayout>

@@ -7,7 +7,6 @@
     <string name="edit_message">Enter a message</string>
     <string name="username_here">Username</string>
     <string name="password_here">Password</string>
-    <string name="phone_number">Phone #</string>
     <string name="get_friends">Refresh Friends</string>
     <string name="add_friends">Add Friends</string>
     <string name="add_friend">Add Friend</string>

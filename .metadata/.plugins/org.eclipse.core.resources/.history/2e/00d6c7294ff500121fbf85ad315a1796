@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.telephony.SmsManager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,8 +28,7 @@ public class FindFriends extends Activity {
 		// Create the text view
 	    RelativeLayout layout = (RelativeLayout) findViewById(R.id.layout);
 	    TextView textView = new TextView(this);
-	    textView.setTextSize(30);
-	    textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+	    textView.setTextSize(40);
 	    textView.setText(message);
 	    // Set the text view as the activity layout
 	    layout.addView(textView);

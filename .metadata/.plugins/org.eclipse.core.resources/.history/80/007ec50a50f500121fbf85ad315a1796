@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         android:ems="10"
-        android:hint="Name" />
+        android:hint="@string/username_here" />
             <requestFocus />
 
     <Button
@@ -49,6 +49,7 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="phone"
-        android:hint="@string/phone_number"/>
+        android:hint="@string/phone_number" />
+    </EditText>
 
 </RelativeLayout>

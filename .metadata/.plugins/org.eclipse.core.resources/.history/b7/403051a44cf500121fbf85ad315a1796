@@ -20,16 +20,5 @@
         android:layout_marginBottom="74dp"
         android:onClick="sendSMS"
         android:text="SendSMS" />
-
-    <TextView
-        android:id="@+id/message_sent"
-        android:textSize="25sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSendSMS"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-		android:visibility="gone"
-        android:text="Message Sent" />
     
 </RelativeLayout>

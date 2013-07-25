@@ -30,7 +30,7 @@ public class FindFriends extends Activity {
 	    RelativeLayout layout = (RelativeLayout) findViewById(R.id.layout);
 	    TextView textView = new TextView(this);
 	    textView.setTextSize(30);
-	    textView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+	    textView.setGravity(Gravity.CENTER_HORIZONTAL);
 	    textView.setText(message);
 	    // Set the text view as the activity layout
 	    layout.addView(textView);
