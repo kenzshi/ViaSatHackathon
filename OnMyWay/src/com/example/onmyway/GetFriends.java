@@ -17,8 +17,6 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 public class GetFriends implements Runnable {
 	
@@ -72,6 +70,8 @@ public class GetFriends implements Runnable {
 					temp += friends.getString(i)+" ";
 				}
 				
+            	String[] nameArr = temp.split(" ");
+            	Utilities.friendsList = new ArrayList(Arrays.asList(nameArr));
 				
 				
 			} else {
@@ -87,13 +87,13 @@ public class GetFriends implements Runnable {
 		context.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-            	String[] nameArr = friendsStr.split(" ");
-            	Utilities.friendsList = new ArrayList(Arrays.asList(nameArr));
+
             	
             	for (String name : Utilities.friendsList) {
             		{
             			Log.e("GetFriends",name);
             		}
+            		
             	}
             }
         });

@@ -3,9 +3,12 @@ package com.example.onmyway;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -17,6 +20,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
     }
 
 
@@ -31,7 +35,10 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(this, LoggedIn.class);
     	EditText editText = (EditText) findViewById(R.id.login_name);
     	String message = editText.getText().toString();
+    	Utilities.userName = message;
     	intent.putExtra(EXTRA_MESSAGE, message);
+    	TextView waitMessage = (TextView) findViewById(R.id.progress);
+    	waitMessage.setVisibility(View.VISIBLE);
     	startActivity(intent);
     }
 }

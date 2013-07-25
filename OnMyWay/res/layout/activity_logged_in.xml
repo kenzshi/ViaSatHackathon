@@ -18,15 +18,8 @@
         android:layout_alignBottom="@+id/send_query"
         android:layout_alignRight="@+id/list_view"
         android:layout_marginRight="12dp"
+        android:onClick="addFriend"
         android:text="@string/add_friends" />
-
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" >
-    </ListView>
 
     <Button
         android:id="@+id/send_query"
@@ -38,5 +31,15 @@
         android:layout_marginTop="13dp"
         android:onClick="getFriends"
         android:text="@string/get_friends" />
+
+    <ListView
+        android:id="@+id/list_view"
+        android:color="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/Button01"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" >
+    </ListView>
 
 </RelativeLayout>

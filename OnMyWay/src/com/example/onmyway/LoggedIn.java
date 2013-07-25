@@ -9,16 +9,19 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class LoggedIn extends Activity {
 
 	public final static String EXTRA_MESSAGE = "com.example.onmyway.MESSAGE";
-	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,12 @@ public class LoggedIn extends Activity {
 		// Show the Up button in the action bar.
 		//setupActionBar();
 		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.activity_logged_in); //Set the text view as the activity layout
+		
 		Intent intent = getIntent();
 		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE); //login name
 		
-		setContentView(R.layout.activity_logged_in); //Set the text view as the activity layout
 		ArrayList<Thread> threads = new ArrayList();
 		Runnable getFriendsThreads = new GetFriends(this,message);
 		Thread add_friends = new Thread(getFriendsThreads);
@@ -43,9 +48,15 @@ public class LoggedIn extends Activity {
 		listView.setAdapter(adapter);
 		MainActivity.count = MainActivity.count+1;
 		if(MainActivity.count==1){
-		Intent intentRefresh = new Intent(this, LoggedIn.class);
-		startActivity(intentRefresh);}
-
+		finish();
+		startActivity(getIntent());}
+		listView.setOnItemClickListener(new OnItemClickListener() {
+	        public void onItemClick(AdapterView<?> parent, View view,
+	                int position, long id) {
+	        Log.e("Clicked",Integer.toString(position));
+	        }
+	    });
+	
 	}
 
 	/**
@@ -66,22 +77,18 @@ public class LoggedIn extends Activity {
 	}
 	
 	public void getFriends(View view) {
-		Intent intent = new Intent(this, LoggedIn.class);
-		startActivity(intent);
-		//setContentView(R.layout.activity_logged_in); //Set the text view as the activity layout
-    	/*Intent intent = new Intent(this, DisplayMessageActivity.class);
-    	//EditText editText = (EditText) findViewById(R.id.edit_message);
-    	//String message = editText.getText().toString();
-    	
-    	GPSTracker tracker = new GPSTracker(LoggedIn.this);
-    	double longitude = tracker.getLongitude();
-    	double latitude = tracker.getLatitude();
-    	
-    	String message = String.format("%.3f", longitude) + "," + String.format("%.3f", latitude);
-    	
-    	intent.putExtra(EXTRA_MESSAGE, message);
-    	startActivity(intent);*/
+		MainActivity.count = 0;
+		Log.e("Count",Integer.toString(MainActivity.count));
+		finish();
+		startActivity(getIntent());
     }
+	
+	public void addFriend(View view) {
+		finish();
+		MainActivity.count = 0;
+		Intent intent = new Intent(this, NewFriend.class);
+		startActivity(intent);
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
