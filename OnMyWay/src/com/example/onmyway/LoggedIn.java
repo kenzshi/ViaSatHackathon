@@ -54,7 +54,7 @@ public class LoggedIn extends Activity {
 	        public void onItemClick(AdapterView<?> parent, View view,
 	                int position, long id) {
 	        Log.e("Clicked",GetFriends.nameArr[position]);
-	        Toast.makeText(getApplicationContext(),GetFriends.nameArr[position],Toast.LENGTH_SHORT).show();
+	        //Toast.makeText(getApplicationContext(),GetFriends.nameArr[position],Toast.LENGTH_SHORT).show();
 	        NetworkThreadGMaps.un_destination = GetFriends.nameArr[position];
 	        NetworkThreadGMaps.un_origin = Utilities.userName;
 	        Intent intent = new Intent(view.getContext(),FindFriends.class);

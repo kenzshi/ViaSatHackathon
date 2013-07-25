@@ -1,0 +1,5 @@
+package com.example.onmyway;
+
+public class GpsThread {
+
+}
