@@ -9,7 +9,7 @@
     tools:context=".LoggedIn" >
 
      <Button
-        android:id="@+id/button1"
+        android:id="@+id/send_query"
         style="@style/btn"
         android:layout_width="150dp"
         android:layout_height="75dp"

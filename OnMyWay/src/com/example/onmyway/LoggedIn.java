@@ -1,5 +1,6 @@
 package com.example.onmyway;
 
+import com.example.onmyway.*;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -10,6 +11,7 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class LoggedIn extends Activity {
@@ -19,21 +21,20 @@ public class LoggedIn extends Activity {
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_logged_in);
+		//setContentView(R.layout.activity_logged_in);
 		// Show the Up button in the action bar.
 		//setupActionBar();
 		
 		Intent intent = getIntent();
-		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE); //login name
 		
-		// Create the text view
-	    TextView textView = new TextView(this);
-	    textView.setTextSize(40);
-	    textView.setText(message);
-
-	    // Set the text view as the activity layout
-	    setContentView(R.layout.activity_logged_in);
+		//setContentView(R.layout.activity_logged_in); //Set the text view as the activity layout
+				
+		NetworkThread nt = new NetworkThread(this,message);
+		new Thread(nt).start();
+		
 	}
 
 	/**
