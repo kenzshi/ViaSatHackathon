@@ -1,0 +1,118 @@
+package com.example.onmyway;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.app.Activity;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class NetworkThread implements Runnable {
+	
+	Activity act;
+	String un;
+	
+	public void add_friend() {
+		String temp = "";
+		
+		String result = "";
+		InputStream is = null;
+
+		Log.e("abc", "BEGIN");
+		
+		//http post
+		try {
+			HttpClient httpclient = new DefaultHttpClient();
+			HttpPost httppost = new HttpPost("http://www.justinalanbass.com/php/get_friends.php?user_name="+un);
+			HttpResponse response = httpclient.execute(httppost);
+			HttpEntity entity = response.getEntity();
+			is = entity.getContent();
+		} catch(Exception e1){
+			Log.e("log_tag", "Error in http connection "+e1.toString());
+		}
+	
+		//convert response to string
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			while ((line = reader.readLine()) != null)
+				sb.append(line + "\n");
+
+			is.close(); 
+			result=sb.toString();
+			//Log.e("abc",result);
+		} catch(Exception e11){
+			Log.e("log_tag", "Error converting result "+e11.toString());
+		}
+		 
+		//parse json data
+		try{
+			JSONObject obj = new JSONObject(result);
+			
+			if( obj.getInt("success") == 1 ) {
+				JSONArray friends = obj.getJSONArray("friends");
+				int n = friends.length();
+				
+				for (int i = 0; i < n; ++i) {
+					Log.e("abc",friends.getString(i));
+					temp += friends.getString(i)+" ";
+				}
+				
+				
+			} else {
+				Log.e("abc","not success");	
+			}
+			
+		} catch(JSONException e){
+		        Log.e("log_tag", "Error parsing data "+e.toString());
+		}
+		
+		final String friendsStr = temp;
+		
+		act.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                //btn.setText("#" + i);
+            	LinearLayout lView = new LinearLayout(act);
+            	
+            	
+            	/*String[] nameArr = friendsStr.split(" ");
+            	ArrayList<String> nameList = new ArrayList(Arrays.asList(nameArr));
+            	for (String name : nameList) {
+            		
+            	Button myButton = new Button(act);
+                myButton.setText(name);
+                lView.addView(myButton);*/
+
+            	}
+        	    
+        	    act.setContentView(lView);
+            }
+        });
+		
+		return;
+	}
+		
+	NetworkThread(Activity aact, String str) {
+		act = aact;
+		un = str;
+	}
+	
+	public void run() {
+		add_friend();
+	}
+	
+}
