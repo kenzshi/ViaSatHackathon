@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
-    
-
-</animation-list>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+     <item android:state_pressed="true" >
+         <shape android:shape="rectangle">
+             <gradient  android:angle="-90"  android:startColor="#007dc1" android:endColor="#0061a7"  />            
+         </shape>
+     </item>
+    <item android:state_focused="true">
+         <shape android:shape="rectangle"  >
+             <solid  android:color="#007dc1"/>       
+         </shape>
+     </item>  
+    <item >
+        <shape android:shape="rectangle">
+             <gradient  android:angle="-90"  android:startColor="#0061a7" android:endColor="#007dc1" />            
+         </shape>
+     </item>
+</selector>
