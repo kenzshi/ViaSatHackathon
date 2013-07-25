@@ -1121,3 +1121,99 @@ org.eclipse.core.runtime.AssertionFailedException: assertion failed:
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 17:22:39.999
 !MESSAGE Current file is not a match for the given config.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 18:09:43.835
+!MESSAGE activity_main.xml: Dimension "150" in attribute "layout_width" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 18:09:57.006
+!MESSAGE activity_main.xml: Dimension "150" in attribute "layout_width" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 18:09:57.007
+!MESSAGE activity_main.xml: Dimension "100" in attribute "layout_height" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 18:09:59.735
+!MESSAGE activity_main.xml: Dimension "150" in attribute "layout_width" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 18:09:59.735
+!MESSAGE activity_main.xml: Dimension "100" in attribute "layout_height" is missing unit!
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:58.978
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:58.982
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:58.984
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:58.986
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:58.987
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:58.987
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:59.075
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:59.078
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:59.079
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:59.081
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:59.082
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-07-24 18:10:59.082
+!MESSAGE activity_main.xml: Couldn't resolve resource @style/styleName
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:10.396
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:10.397
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:10.403
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:10.403
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:10.411
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:17.047
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:17.048
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:17.054
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:17.054
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:17.060
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:21.120
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:21.121
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:21.124
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:21.125
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2013-07-24 20:14:21.129
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin

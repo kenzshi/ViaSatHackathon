@@ -1,22 +1,38 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
-    
-	<EditText
-	    android:id="@+id/edit_message"
-	    android:layout_weight="1"
-	    android:layout_width="0dp"
-	    android:layout_height="wrap_content"
-	    android:hint="@string/edit_message" />
 
-	<Button 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/button_send" 
-	    android:onClick="sendMessage" />
-	
-	
-	
-</LinearLayout>
+    <Button
+        android:id="@+id/button1"
+        style="@style/btn"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:onClick="sendMessage"
+        android:text="@string/button_send" />
+
+    <EditText
+        android:id="@+id/login_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/button1"
+        android:layout_marginTop="131dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/login_name"
+        android:layout_toRightOf="@+id/login_name"
+        android:onClick="loginUser"
+        android:text="@string/login" />
+
+</RelativeLayout>
