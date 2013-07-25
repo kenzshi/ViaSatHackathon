@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="22dp"
         android:onClick="sendMessage"
-        android:text="@string/button_send" />
+        android:text="@string/get_friends" />
     
     <TextView
         android:layout_width="wrap_content"

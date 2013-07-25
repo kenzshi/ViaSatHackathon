@@ -1,6 +1,7 @@
 package com.example.onmyway;
 
-import com.example.onmyway.*;
+import java.util.ArrayList;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -11,8 +12,8 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class LoggedIn extends Activity {
 
@@ -22,19 +23,29 @@ public class LoggedIn extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
-		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.activity_logged_in);
 		// Show the Up button in the action bar.
 		//setupActionBar();
-		
+		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
 		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE); //login name
 		
-		//setContentView(R.layout.activity_logged_in); //Set the text view as the activity layout
-				
-		NetworkThread nt = new NetworkThread(this,message);
-		new Thread(nt).start();
-		
+		setContentView(R.layout.activity_logged_in); //Set the text view as the activity layout
+		ArrayList<Thread> threads = new ArrayList();
+		Runnable getFriendsThreads = new GetFriends(this,message);
+		Thread add_friends = new Thread(getFriendsThreads);
+		threads.add(add_friends);
+		add_friends.start();
+		try{add_friends.join();}catch(InterruptedException ie){}
+
+		ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,Utilities.friendsList);
+		ListView listView = (ListView) findViewById(R.id.list_view);
+		listView.setAdapter(adapter);
+		MainActivity.count = MainActivity.count+1;
+		if(MainActivity.count==1){
+		Intent intentRefresh = new Intent(this, LoggedIn.class);
+		startActivity(intentRefresh);}
+
 	}
 
 	/**
@@ -54,8 +65,11 @@ public class LoggedIn extends Activity {
 		return true;
 	}
 	
-	public void sendMessage(View view) {
-    	Intent intent = new Intent(this, DisplayMessageActivity.class);
+	public void getFriends(View view) {
+		Intent intent = new Intent(this, LoggedIn.class);
+		startActivity(intent);
+		//setContentView(R.layout.activity_logged_in); //Set the text view as the activity layout
+    	/*Intent intent = new Intent(this, DisplayMessageActivity.class);
     	//EditText editText = (EditText) findViewById(R.id.edit_message);
     	//String message = editText.getText().toString();
     	
@@ -66,7 +80,7 @@ public class LoggedIn extends Activity {
     	String message = String.format("%.3f", longitude) + "," + String.format("%.3f", latitude);
     	
     	intent.putExtra(EXTRA_MESSAGE, message);
-    	startActivity(intent);
+    	startActivity(intent);*/
     }
 
 	@Override

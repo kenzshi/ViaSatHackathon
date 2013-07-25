@@ -7,7 +7,8 @@
     <string name="edit_message">Enter a message</string>
     <string name="username_here">Username</string>
     <string name="password_here">Password</string>
-    <string name="button_send">On My Way!</string>
+    <string name="get_friends">Refresh Friends</string>
+    <string name="add_friends">Add Friends</string>
     <string name="login">Login</string>
     <string name="logo">Logo</string>
     <string name="register">Register</string>

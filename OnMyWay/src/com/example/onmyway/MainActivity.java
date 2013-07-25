@@ -9,7 +9,8 @@ import android.widget.EditText;
 
 
 public class MainActivity extends Activity {
-
+	
+	public static int count = 0;
 	public final static String EXTRA_MESSAGE = "com.example.onmyway.MESSAGE";
 	
     @Override
