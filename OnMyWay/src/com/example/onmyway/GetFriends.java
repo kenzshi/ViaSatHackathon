@@ -19,7 +19,7 @@ import android.app.Activity;
 import android.util.Log;
 
 public class GetFriends implements Runnable {
-	
+	public static String[] nameArr;
 	Activity context;
 	String userName;
 	
@@ -70,7 +70,7 @@ public class GetFriends implements Runnable {
 					temp += friends.getString(i)+" ";
 				}
 				
-            	String[] nameArr = temp.split(" ");
+            	nameArr = temp.split(" ");
             	Utilities.friendsList = new ArrayList(Arrays.asList(nameArr));
 				
 				

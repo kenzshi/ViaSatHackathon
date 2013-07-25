@@ -18,19 +18,19 @@ import android.app.Activity;
 
 public class NetworkThreadGMaps implements Runnable {
 	
-	Activity act;
-	String un_origin;
-	String un_destination;
-	double lat_origin, long_origin, lat_destination, long_destination;
-	String eta;
+	static Activity act;
+	static String un_origin;
+	static String un_destination;
+	static double lat_origin, long_origin, lat_destination, long_destination;
+	static String eta;
 	
-	public void get_eta() {
+	public static void get_eta() {
 		String temp = "";
 		
 		String result = "";
 		InputStream is = null;
 
-		Log.e("abc", "BEGIN");
+		Log.e("NetworkThreadGMAPS", "BEGIN");
 		
 		//http post
 		try {
@@ -110,10 +110,10 @@ public class NetworkThreadGMaps implements Runnable {
 				lat_destination = obj.getDouble("latitude");
 				long_destination = obj.getDouble("longitude");
 				
-				Log.e("abc", "Z" + lat_destination + " " + long_destination);
+				Log.e("Location", "Z" + lat_destination + " " + long_destination);
 				
 			} else {
-				Log.e("abc","not success");	
+				Log.e("Error in JSON data","not success");	
 			}
 			
 		} catch(JSONException e){
@@ -167,7 +167,7 @@ public class NetworkThreadGMaps implements Runnable {
 		        Log.e("log_tag", "Error parsing data "+e.toString());
 		}
 		
-		act.runOnUiThread(new Runnable() {
+		/*act.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //btn.setText("#" + i);
@@ -178,13 +178,12 @@ public class NetworkThreadGMaps implements Runnable {
         	    lView.addView(textView);
         	    act.setContentView(lView);
             }
-        });
+        });*/
 		
 		return;
 	}
 		
-	NetworkThreadGMaps(Activity aact, String uno, String und) {
-		act = aact;
+	NetworkThreadGMaps(String uno, String und) {
 		un_origin = uno;
 		un_destination = und;
 	}

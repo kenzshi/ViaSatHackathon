@@ -53,7 +53,18 @@ public class LoggedIn extends Activity {
 		listView.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View view,
 	                int position, long id) {
-	        Log.e("Clicked",Integer.toString(position));
+	        Log.e("Clicked",GetFriends.nameArr[position]);
+	        Toast.makeText(getApplicationContext(),GetFriends.nameArr[position],Toast.LENGTH_SHORT).show();
+	        NetworkThreadGMaps.un_destination = GetFriends.nameArr[position];
+	        NetworkThreadGMaps.un_origin = Utilities.userName;
+	        Intent intent = new Intent(view.getContext(),FindFriends.class);
+	        Runnable getLocations = new NetworkThreadGMaps(Utilities.userName,GetFriends.nameArr[position]);
+	        Thread get_locations = new Thread(getLocations);
+	        get_locations.start();
+	        try{get_locations.join();}catch(InterruptedException ie){}
+	        String location = NetworkThreadGMaps.eta;
+	        intent.putExtra(EXTRA_MESSAGE, location);
+	        startActivityForResult(intent,0);
 	        }
 	    });
 	

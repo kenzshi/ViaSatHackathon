@@ -17,6 +17,7 @@
     <string name="title_activity_main">GPS Coordinates</string>
     <string name="title_activity_display_message">MainActivity</string>
     <string name="title_activity_new_friend">Add Friends!</string>
-    <string name="title_activity_logged_in">On My Way</string>
+    <string name="title_activity_logged_in">On My Way!</string>
+    <string name="title_activity_find_friends">On My Way!</string>
 
 </resources>
